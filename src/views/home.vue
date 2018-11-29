@@ -1,18 +1,26 @@
 <template>
-	<div id="box">哈哈哈哈</div>
+	<div>
+		<div>我是首页啊</div>
+	</div>
+
 </template>
+
 <script>
+// import FileSaver from 'file-saver'
+// import XLSX from 'xlsx'
 	export default{
 		data(){
 			return{
 
 			}
 		},
-		created(){
-			
-		},
 		mounted(){
-			console.log($("#box").html("11111"))
+		
+		},
+		methods:{
+
 		}
 	}
+
+
 </script>
