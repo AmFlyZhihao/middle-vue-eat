@@ -98,3 +98,23 @@ body,html{
     font-weight: 200;
     font-family: 'PingFang SC','STHeitiSC-Light','Helvetica-Light',arial,sans-serif
 }
+
+.around{
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items:center;
+        justify-content: space-around;
+        -webkit-justify-content: space-around;
+    }
+.between{
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items:center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+input{
+    outline: none;
+}

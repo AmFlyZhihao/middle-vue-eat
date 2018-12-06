@@ -1,18 +1,42 @@
 <template>
 	<div>
-		<div class="swiper-container">
+		<div class="swiper-container swiper-container01">
 		    <div class="swiper-wrapper">
 		      <div class="swiper-slide"><img src="https://res.vmallres.com/pimages//sale/2018-11/YrrOwsSRs0htaIUx0lLo.jpg"></div>
 		      <div class="swiper-slide"><img src="https://res.vmallres.com/pimages//sale/2018-11/YrrOwsSRs0htaIUx0lLo.jpg"></div>
 		      <div class="swiper-slide"><img src="https://res.vmallres.com/pimages//sale/2018-11/YrrOwsSRs0htaIUx0lLo.jpg"></div>
 		    </div>
-		    <!-- 如果需要分页器 -->
-		    <div class="swiper-pagination"></div>
-		    <!-- 如果需要导航按钮 -->
-		   <!--  <div class="swiper-button-prev"></div>
-		    <div class="swiper-button-next"></div> -->
+		    <div class="swiper-pagination swiper-pagination01"></div>
   		</div>
-
+		<!--小菜单-->
+		 <div class="swiper-container swiper-container02">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide">
+		      	<img src="@/assets/images/ygm.png" alt="">
+				<span>优享购</span>
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="@/assets/images/yqyl.png" alt="">
+		      	<span>邀请有礼</span>
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="@/assets/images/hylq.png" alt="">
+		      	<span>会员领券</span>
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="@/assets/images/yxg.png" alt="">
+		      	<span>以旧换新</span>
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="@/assets/images/yjhx.png" alt="">
+		      	<span>优购码</span>
+		      </div>
+		      <div class="swiper-slide">
+		      	<img src="@/assets/images/yxg.png" alt="">
+		      	<span>优享购</span>
+		      </div>
+		    </div>
+  		</div>
 	</div>
 
 </template>
@@ -28,26 +52,29 @@ import 'swiper/dist/css/swiper.min.css';
 			}
 		},
 		mounted(){
-			let mySwiper = new Swiper('.swiper-container', {
+			let mySwiper = new Swiper('.swiper-container01', {
 				// direction: 'vertical', // 垂直切换选项
 			    loop: true, // 循环模式选项
 			    
 			    // 如果需要分页器
 			    pagination: {
-			      el: '.swiper-pagination',
+			      el: '.swiper-pagination01',
 			    },
-			    
-			    // 如果需要前进后退按钮
-			    navigation: {
-			      nextEl: '.swiper-button-next',
-			      prevEl: '.swiper-button-prev',
-			    },
-			    
-			    // 如果需要滚动条
-			    scrollbar: {
-			      el: '.swiper-scrollbar',
-			    },
+			    autoplay : true,
+			    speed:500,
+			      autoplayDisableOnInteraction : false,
 			})
+
+			//小菜单
+			 let swiper = new Swiper('.swiper-container02', {
+			      slidesPerView: 5,
+			      spaceBetween: 20,
+			      // init: false,
+			      pagination: {
+			        el: '.swiper-pagination02',
+			        clickable: true,
+			      },
+    		});
 		},
 		methods:{
 
@@ -61,6 +88,16 @@ import 'swiper/dist/css/swiper.min.css';
   height:100%;
 }
 .swiper-slide img{
-	width: 100%
+	width: 100%;
+	height: 100%;
+}
+/*.swiper-container02 .swiper-slide{
+	border: 1px solid red;
+}*/
+.swiper-container02 .swiper-slide span{
+	display: block;
+	text-align: center;
+	color:#9B9B9B;
+	font-size:0.24rem;
 }
 </style>

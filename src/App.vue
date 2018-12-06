@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <v-head></v-head>
     <foot></foot>
     <router-view/>
   </div>
 </template>
 
 <script>
-import foot from '@/components/foot'
+import foot from '@/components/foot';
+import head from '@/components/head';
 export default {
   name: 'App',
   components:{
     foot,
+    'v-head':head
   }
 }
 </script>
