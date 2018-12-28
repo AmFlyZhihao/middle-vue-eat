@@ -6,6 +6,7 @@
 		      <div class="swiper-slide"><img src="https://res.vmallres.com/pimages//sale/2018-11/YrrOwsSRs0htaIUx0lLo.jpg"></div>
 		      <div class="swiper-slide"><img src="https://res.vmallres.com/pimages//sale/2018-11/YrrOwsSRs0htaIUx0lLo.jpg"></div>
 		    </div>
+		    <!-- 如果需要分页器 -->
 		    <div class="swiper-pagination swiper-pagination01"></div>
   		</div>
 		<!--小菜单-->
@@ -37,6 +38,7 @@
 		      </div>
 		    </div>
   		</div>
+
 	</div>
 
 </template>
@@ -48,21 +50,42 @@ import 'swiper/dist/css/swiper.min.css';
 		data(){
 			return{
 				
-
 			}
+		},
+		created(){
+			this.axios({
+				method:'get',
+				url:'/api/data',
+
+			}).then(response=>{
+				console.log(response)
+			})
+
+
+			this.axios({
+				method:'post',
+				url:'/api/data2',
+
+			}).then(response=>{
+				console.log(response)
+			})
 		},
 		mounted(){
 			let mySwiper = new Swiper('.swiper-container01', {
-				// direction: 'vertical', // 垂直切换选项
 			    loop: true, // 循环模式选项
-			    
-			    // 如果需要分页器
 			    pagination: {
 			      el: '.swiper-pagination01',
+			      clickable: true,
 			    },
-			    autoplay : true,
-			    speed:500,
+			    // autoplay : true,
+			    // speed:500,
+			     autoplay: {
+    				delay: 3000,//1秒切换一次
+    				disableOnInteraction: false,
+  				},
 			      autoplayDisableOnInteraction : false,
+			        observer:true,
+    				observeParents:true,//修改swiper的父元素时，自动初始化swiper
 			})
 
 			//小菜单
